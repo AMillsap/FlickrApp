@@ -1,11 +1,13 @@
 package com.example.flickrapp.datasource.remote
 
 import android.util.Log
+import com.example.flickrapp.PhotoObserver
 import com.example.flickrapp.model.PhotoResponse.PhotoResult
 import com.google.gson.Gson
 import okhttp3.*
 import org.greenrobot.eventbus.EventBus
 import java.io.IOException
+import java.util.*
 
 class OkHttpHelper
 {

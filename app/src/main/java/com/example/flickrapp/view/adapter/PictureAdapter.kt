@@ -11,8 +11,9 @@ import com.example.flickrapp.R
 import com.example.flickrapp.model.PhotoResponse.Photo
 import kotlinx.android.synthetic.main.photo_item.view.*
 
-class PictureAdapter(var pictureList: List<Photo>) : RecyclerView.Adapter<PictureAdapter.ViewHolder>()
+class PictureAdapter() : RecyclerView.Adapter<PictureAdapter.ViewHolder>()
 {
+    var pictureList = ArrayList<Photo>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder((LayoutInflater.from(parent.context).inflate(R.layout.photo_item, parent, false)))
 
@@ -23,8 +24,9 @@ class PictureAdapter(var pictureList: List<Photo>) : RecyclerView.Adapter<Pictur
         holder.populateItem(pictureList[position])
     }
 
-    fun updateList()
+    fun updateList(list : ArrayList<Photo>)
     {
+        pictureList = list
         notifyDataSetChanged()
     }
 
